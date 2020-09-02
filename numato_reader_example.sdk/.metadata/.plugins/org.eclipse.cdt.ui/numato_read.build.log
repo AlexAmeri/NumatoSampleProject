@@ -1,0 +1,46 @@
+09:55:33 **** Auto Build of configuration Debug for project numato_read ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../numato_read_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../../numato_read_bsp/ps7_cortexa9_0/include/xgpio.h:135:0,
+                 from ../src/helloworld.c:52:
+../src/helloworld.c: In function 'initGPIOs':
+../../numato_read_bsp/ps7_cortexa9_0/include/xstatus.h:65:41: warning: 'return' with a value, in function returning void
+ #define XST_FAILURE                     1L
+                                         ^
+../src/helloworld.c:62:10: note: in expansion of macro 'XST_FAILURE'
+   return XST_FAILURE;
+          ^~~~~~~~~~~
+../src/helloworld.c:57:6: note: declared here
+ void initGPIOs(){
+      ^~~~~~~~~
+In file included from ../../numato_read_bsp/ps7_cortexa9_0/include/xgpio.h:135:0,
+                 from ../src/helloworld.c:52:
+../../numato_read_bsp/ps7_cortexa9_0/include/xstatus.h:65:41: warning: 'return' with a value, in function returning void
+ #define XST_FAILURE                     1L
+                                         ^
+../src/helloworld.c:69:10: note: in expansion of macro 'XST_FAILURE'
+   return XST_FAILURE;
+          ^~~~~~~~~~~
+../src/helloworld.c:57:6: note: declared here
+ void initGPIOs(){
+      ^~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: numato_read.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../numato_read_bsp/ps7_cortexa9_0/lib -o "numato_read.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: numato_read.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size numato_read.elf  |tee "numato_read.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23584	   1184	  22616	  47384	   b918	numato_read.elf
+Finished building: numato_read.elf.size
+ 
+
+09:55:33 Build Finished (took 108ms)
+

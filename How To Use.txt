@@ -1,0 +1,38 @@
+Welcome to the 2020 Embedded 2 Virtual Lab!
+
+TO DEPLOY THE SAMPLE PROJECT: -------------------------------------------------------------------------------
+1. Using Vivado, open the "numato_reader_example". An error may be thrown regarding the 
+DDR, for this sample project it is safe to ignore this.
+
+2. Click File->Launch SDK . Include the Bitstream located at 
+project_root/numato_reader_example.runs/impl1/design_1_wrapper.bit
+
+3. Click on "Program FPGA" Button in the top button pannel (The red arrow and green blocks image)
+
+4. Right-Click on the numato_read project in the Project Explorer. Click Run As -> Launch on Hardware (GDB)
+
+5. The bitfile and software application are now running on the board. 
+
+
+
+TO RUN THE UTILITY: -----------------------------------------------------------------------------------------
+
+In order to "virtually" press buttons and throw switches on our lab Zybo boards,
+please do the following:
+
+
+1. Navigate to the python/ directory in this project folder
+2. Open a terminal, and type:
+	
+	sh virtual_buttons_and_switches_python3.sh
+   
+   At the time of writing, it is known that ece40 does not have python installed correctly.
+
+3. Pressing keys 1 through 4 will drive some of the Zybo board pins active high for
+   100 milliseconds. Pressing keys 5 through 8 will toggle some other pins active high or
+   low.
+
+The "Buttons" are connected to the top row of the JA Header on the Zybo board.
+The "Switches" are connected to the bottom row of the JA Header on the Zybo board.
+
+
